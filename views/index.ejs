@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>home page</title>
+</head>
+<body>
+    <header>
+        <h1>
+            All Jokes 
+        </h1>
+    </header>
+    <main>
+<div class="allContainer">
+<%data.forEach(val=>{%>
+<div class="container">
+
+<h1>Joke #<%=data.length%></h1>
+<h2><%=val.type%></h2>
+<h3><%=val.setup%></h3>
+<h4><%=val.punchline%></h4>
+<div>
+<button class="show">select</button>
+
+<form action="/addToDb" method="GET" class="form">
+
+<input type="text" name="type" value="<%=val.type%>">
+<input type="text" name="setup" value="<%=val.setup%>">
+<input type="text" name="punchline" value="<%=val.punchline%>">
+
+<input type="submit"  value="Add to my jokes list">
+</form>
+</div>
+
+</div>
+
+<%})%>
+</div>
+
+    </main>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/app.js"></script> 
+
+
+</body>
+</html>

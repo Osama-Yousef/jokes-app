@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>details page</title>
+</head>
+<body>
+    <header>
+        <h1>
+             Jokes Details
+        </h1>
+    </header>
+    <main>
+<div class="allContainer">
+<div class="container">
+
+<h2><%=data.type%></h2>
+<h3><%=data.setup%></h3>
+<h4><%=data.punchline%></h4>
+<div>
+<button class="showdet">update this</button>
+
+<form action="/update/<%=data.id%>?_method=put" method="POST" class="formdet">
+
+<input type="text" name="type" value="<%=data.type%>">
+<input type="text" name="setup" value="<%=data.setup%>">
+<input type="text" name="punchline" value="<%=data.punchline%>">
+
+<input type="submit"  value="UPDATE">
+</form>
+</div>
+
+
+<form action="/delete/<%=data.id%>?_method=delete" method="POST" >
+    <button>DELETE</button>
+</form>
+
+
+</div>
+
+</div>
+
+    </main>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/app.js"></script> 
+
+
+</body>
+</html>
